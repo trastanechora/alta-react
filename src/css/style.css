@@ -51,6 +51,10 @@ body {
     color: rgb(7, 82, 65);
 }
 
+.box.list {
+    border-top: none;
+}
+
 .list:hover {
     background-color: rgb(214, 214, 214);
     cursor: pointer;
@@ -59,6 +63,8 @@ body {
 .top-head {
     padding-bottom: 10px;
     padding-top: 10px;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
 }
 
 .top-paragraf {
@@ -84,7 +90,15 @@ body {
 }
 
 /* .top-articles {
-    color: rgb(7, 82, 65);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 150px;      
+} */
+
+/* .sticky {
+    position: sticky;
+    top: 0;
+    position: fixed;
 } */
 
 /* Top end here */
@@ -107,6 +121,16 @@ body {
     margin-top: 20px;
 }
 
+.blog-paragraf {
+    font-size: 16px;
+    color: black;
+    text-align: justify;
+}
+
+.blog-item {
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+}
 
 
 
