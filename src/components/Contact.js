@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Project.css';
+import '../css/Project.css';
 
 class Contact extends Component {
   render() {
@@ -7,7 +7,7 @@ class Contact extends Component {
     <div className="page-contact">
         <div className="row">
             <div className="left col-md-6" >
-                <img id="alterra-at-contact" src={require("./logo/logo-alterra-academy-plain@2x.png")}/>
+                <img id="alterra-at-contact" src={require("../logo/logo-alterra-academy-plain@2x.png")}/>
             </div>
 
             <div className="right col-md-6">
@@ -18,7 +18,7 @@ class Contact extends Component {
                     <label for="name">Name<span className="red">*</span></label>
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="name"><img src={require("./ico/ico-user.png")}/></span>
+                                <span class="input-group-text" id="name"><img src={require("../ico/ico-user.png")}/></span>
                             </div>
                             <input type="text" class="form-control" id="name" aria-describedby="basic-addon3" />
                         </div>
@@ -26,7 +26,7 @@ class Contact extends Component {
                     <label for="email">Email<span className="red">*</span></label>
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="email"><img src={require("./ico/ico-email.png")}/></span>
+                                <span class="input-group-text" id="email"><img src={require("../ico/ico-email.png")}/></span>
                             </div>
                             <input type="text" class="form-control" id="email" aria-describedby="basic-addon3" />
                         </div>
@@ -34,7 +34,7 @@ class Contact extends Component {
                     <label for="phone">Phone Number<span className="red">*</span></label>
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="phone"><img src={require("./ico/ico-phone.png")}/></span>
+                                <span class="input-group-text" id="phone"><img src={require("../ico/ico-phone.png")}/></span>
                             </div>
                             <input type="text" class="form-control" id="phone" aria-describedby="basic-addon3" />
                         </div>

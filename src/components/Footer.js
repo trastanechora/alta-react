@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './Project.css';
-import logo from './logo/logo-alterra-academy-plain.png';
-import fbIcon from './ico/ico-facebook.png';
-import twIcon from './ico/ico-twitter.png';
-import igIcon from './ico/ico-instagram.png'
+import '../css/Project.css';
+import logo from '../logo/logo-alterra-academy-plain.png';
+import fbIcon from '../ico/ico-facebook.png';
+import twIcon from '../ico/ico-twitter.png';
+import igIcon from '../ico/ico-instagram.png'
 
 
 class Footer extends Component {
