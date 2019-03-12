@@ -1,18 +1,17 @@
 import axios from 'axios'
 import React, { Component } from 'react';
+import { BrowserRaouter, Switch, Route } from 'react-router-dom'
 import HeaderArticle from '../components/HeaderArticle';
-import Top from '../components/Top';
 import '../css/bootstrap.min.css';
 import '../css/style.css';
-import BlogPost from '../components/BlogPost';
 import Searchbox from '../components/Searchbox';
 import ListNews from '../components/ListNews';
 import ListTops from '../components/ListTops';
 
 const urlHeadline = "https://newsapi.org/v2/top-headlines?country=id&apiKey=995ea15a75714a0496b4befa6ae915ef"
-const urlEverything = "https://newsapi.org/v2/everything?q=bitcoin&apiKey=995ea15a75714a0496b4befa6ae915ef"
+const urlEverything = "https://newsapi.org/v2/everything?q=politic&apiKey=995ea15a75714a0496b4befa6ae915ef"
 
-class NewsAPI extends Component {
+class Politic extends Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -22,6 +21,7 @@ class NewsAPI extends Component {
   }
   componentDidMount = () => {
     const self = this;
+    // First Request
     axios
       .get(urlEverything)
       .then(function(response) {
@@ -31,6 +31,8 @@ class NewsAPI extends Component {
       .catch(function(error) {
         console.log(error);
       });
+    
+    // Second Request
     axios
     .get(urlHeadline)
     .then(function(response) {
@@ -44,8 +46,8 @@ class NewsAPI extends Component {
   render() {
     const { listNews, listNews2 } = this.state;
     return (
-      <div>
-        <HeaderArticle />
+      // <div>
+      //   <HeaderArticle />
         <div className="article-content-wrapper row">
           <div className="col-md-4">
             <div className="top-articles sticky-please">
@@ -58,8 +60,7 @@ class NewsAPI extends Component {
                 return <ListTops key={key} title={title} i={key+1}/>
               })}
               <Searchbox /> 
-            </div>
-              
+            </div>  
           </div>
           <div className="col-md-8">
             <div className="container-fluid row top-articles blog-container">
@@ -73,9 +74,9 @@ class NewsAPI extends Component {
             </div>
           </div>
         </div>
-      </div>
+      // </div>
     );
   }
 }
 
-export default NewsAPI;
+export default Politic;

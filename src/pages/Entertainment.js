@@ -9,22 +9,16 @@ import ListNews from '../components/ListNews';
 import ListTops from '../components/ListTops';
 
 const urlHeadline = "https://newsapi.org/v2/top-headlines?country=id&apiKey=995ea15a75714a0496b4befa6ae915ef"
-const urlEverything = "https://newsapi.org/v2/everything?q=bitcoin&apiKey=995ea15a75714a0496b4befa6ae915ef"
+const urlEverything = "https://newsapi.org/v2/everything?q=entertainment&apiKey=995ea15a75714a0496b4befa6ae915ef"
 
-const baseUrl = "https://newsapi.org/v2/everything?q="
-const apiKey = "&apiKey=995ea15a75714a0496b4befa6ae915ef"
-
-class Home extends Component {
+class Entertainment extends Component {
   constructor (props) {
-    // console.log("TEST props from HOME: ", this.props)
     super(props);
     this.state = {
       listNews: [],
-      listNews2: [],
-      url: ""
+      listNews2: []
     };
   }
-  
   componentDidMount = () => {
     const self = this;
     // First Request
@@ -49,40 +43,6 @@ class Home extends Component {
       console.log(error);
     });
   };
-
-  handleInputChange = e => {
-    // console.log("event: ", e.target.value)
-    // console.log("Testing Url: ", baseUrl + e.target.value + apiKey)
-    // self.setState({url: baseUrl + e.target.value + apiKey})
-    let value = e.target.value;
-
-    this.setState(
-      {
-        search: value
-      },
-      () => {
-        this.searchNews(value);
-      }
-    );
-  };
-
-  searchNews = async keywords => {
-    console.log("searchNews", keywords);
-    const self = this;
-    if (keywords.length > 2) {
-      try {
-        const response = await axios.get(
-            baseUrl + keywords + apiKey
-          );
-          console.log(response);
-          self.setState({ listNews: response.data.articles })
-      } catch (error) {
-        console.error(error);
-      }
-    }
-  }
-
-
   render() {
     const { listNews, listNews2 } = this.state;
     return (
@@ -99,7 +59,7 @@ class Home extends Component {
                 const title = item.title !== null ? item.title: "";
                 return <ListTops key={key} title={title} i={key+1}/>
               })}
-              <Searchbox doSearch={(e) => this.handleInputChange(e)} /> 
+              <Searchbox /> 
             </div>  
           </div>
           <div className="col-md-8">
@@ -119,4 +79,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Entertainment;
