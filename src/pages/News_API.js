@@ -10,18 +10,20 @@ import ListNews from '../components/ListNews';
 import ListTops from '../components/ListTops';
 
 const urlHeadline = "https://newsapi.org/v2/top-headlines?country=id&apiKey=995ea15a75714a0496b4befa6ae915ef"
+const urlEverything = "https://newsapi.org/v2/everything?q=bitcoin&apiKey=995ea15a75714a0496b4befa6ae915ef"
 
 class NewsAPI extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      listNews: []
+      listNews: [],
+      listNews2: []
     };
   }
   componentDidMount = () => {
     const self = this;
     axios
-      .get(urlHeadline)
+      .get(urlEverything)
       .then(function(response) {
         self.setState({listNews: response.data.articles});
         console.log(response);
@@ -29,9 +31,18 @@ class NewsAPI extends Component {
       .catch(function(error) {
         console.log(error);
       });
+    axios
+    .get(urlHeadline)
+    .then(function(response) {
+      self.setState({listNews2: response.data.articles});
+      console.log(response);
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
   };
   render() {
-    const { listNews } = this.state;
+    const { listNews, listNews2 } = this.state;
     return (
       <div>
         <HeaderArticle />
@@ -42,10 +53,8 @@ class NewsAPI extends Component {
                 <div className="col-md-7 title-top"><strong>BERITA TERKINI</strong></div>
                 <div className="col-md-5 link-top"><a href="#">Lihat semua</a></div>
               </div>
-              {listNews.slice(0, 5).map((item, key) => {
+              {listNews2.slice(0, 5).map((item, key) => {
                 const title = item.title !== null ? item.title: "";
-                // const i = 1
-                // console.log(key)
                 return <ListTops key={key} title={title} i={key+1}/>
               })}
               <Searchbox /> 
