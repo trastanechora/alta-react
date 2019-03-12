@@ -87,6 +87,7 @@ body {
     margin-top: 10px;
     padding-left: 5px;
     padding-right: 5px;
+    font-size: 16px;
 }
 
 /* .top-articles {
@@ -103,8 +104,8 @@ body {
 
 /* Top end here */
 
-.blog-img {
-    max-width: 100%;
+img.blog-img {
+    width: 100%;
 }
 
 .blog-photo {
@@ -130,6 +131,18 @@ body {
 .blog-item {
     margin-bottom: 40px;
     padding-bottom: 10px;
+    width: 100%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.wrapping-content-news {
+    width: 90%;
+}
+
+.sticky-please {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 150px; 
 }
 
 
