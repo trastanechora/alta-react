@@ -5,7 +5,7 @@ const Profile = props => {
     const is_login = JSON.parse(localStorage.getItem("is_login"));
     const email = localStorage.getItem("email");
     const full_name = localStorage.getItem("full_name");
-    console.log("is_login", is_login);
+    console.log("LOOOOOOOOOOOOOOOOOOGGGGGGGGGIN", is_login);
 
     if (is_login == null) {
         return <Redirect to={{ pathname: "/signin" }} />;

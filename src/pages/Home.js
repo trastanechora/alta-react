@@ -17,6 +17,7 @@ const apiKey = "&apiKey=995ea15a75714a0496b4befa6ae915ef"
 class Home extends Component {
   constructor (props) {
     // console.log("TEST props from HOME: ", this.props)
+    // console.log("Test local storage: ", JSON.parse(localStorage.getItem("article")));
     super(props);
     this.state = {
       listNews: [],

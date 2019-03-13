@@ -21,20 +21,25 @@ class MainRoute extends Component {
         <Route exact path="/entertainment" component={Entertainment} />
         <Route exact path="/signin" component={Signin} />
         <Route exact path="/profile" component={Profile} />
-        <Route path="/:query" component={this.GetParam} />
+        <Route path="/:query" component={GetParam} />
       </Switch>
     );
   }
 }
 
-// function GetParam({ match }) {
-//   console.log("TESTING MATCH dari MAINROUTE: ", match)
-//   return (
-//     <div>
-//       <h3>{match.params.query}</h3>
-//     </div>
-//     // this.props.ChangeParam
-//   );
-// }
+function GetParam({ match }) {
+  console.log("TESTING MATCH dari MAINROUTE: ", match)
+  // console.log("STATE: ", this)
+  localStorage.setItem("article", match.params.query)
+  return (
+    // localStorage.setItem("article", match),
+    // "X",
+    // console.log("TESTING MATCH dari MAINROUTE: ", match)
+    <div>
+      <h3>{match.params.query}</h3>
+    </div>
+    // this.props.ChangeParam
+  );
+}
 
 export default MainRoute; 

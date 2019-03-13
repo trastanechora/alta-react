@@ -50,7 +50,7 @@ const Navigation = props => {
             <Link style={{ display: is_login ? 'block' : 'none' }} to="/" className="nav-link" onClick={() => props.postSignout()}>Keluar</Link>
           </li>
           <li>
-            <Link style={{ display: is_login ? 'none' : 'block' }} to="/Signin" className="nav-link">Masuk</Link>
+            <Link style={{ display: is_login ? 'none' : 'block' }} to="/Signin" className="nav-link" onClick={() => props.checkState()}>Masuk</Link>
           </li>
           <li>
             <Link to="/Profile" className="nav-link">Profile</Link>
