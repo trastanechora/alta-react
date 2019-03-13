@@ -7,7 +7,7 @@ const ListNews = props => {
     return (
         <div className="blog-item">
             <div className="col-md-12 blog-photo">
-                <img className="blog-img" src={props.img} />
+                <img className="blog-img" src={props.img} alt=""/>
             </div>
             <div className="col-md-12 container wrapping-content-news">
                 <h4 className="blog-title">{props.title}</h4>

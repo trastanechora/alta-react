@@ -27,6 +27,7 @@ class AppAjax extends Component {
         );
     }
 }
+
 // const AppAjax = connect('full_name', actions)(
 //     ({full_name}) => (
 //         <div>

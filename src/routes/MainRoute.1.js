@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Switch, Link } from "react-router-dom";
 
-import Home from "../pages/Home(backup)";
+import Home from "../pages/Home";
+// import GetParam from "../pages/Home";
 import Football from "../pages/Football";
 import Economy from "../pages/Economy";
 import Politic from "../pages/Politic";
@@ -9,18 +10,8 @@ import Entertainment from "../pages/Entertainment";
 import Signin from "../components/Signin";
 import Profile from "../components/Profile";
 
-import { connect } from "unistore/react";
-import { actions } from '../store'
-import { withRouter } from "react-router-dom";
-
 class MainRoute extends Component {
-  GetParam = (match) => {
-    this.props.updateCategory(match.match.params);
-    return (
-      <div>a</div>
-    )
-  };
-  render() {
+    render() {
     return (
       <Switch>
         <Route exact path="/" component={Home} />
@@ -30,14 +21,28 @@ class MainRoute extends Component {
         <Route exact path="/entertainment" component={Entertainment} />
         <Route exact path="/signin" component={Signin} />
         <Route exact path="/profile" component={Profile} />
-        <Route path="/:query" component={this.GetParam} />
-        <Route exact path="/" component={Home} />
-        <Route path="/:query" component={this.GetParam} />
+        <Route path="/:query" component={GetParam} />
       </Switch>
     );
   }
 }
 
+function GetParam({ match }) {
+  console.log("TESTING MATCH dari MAINROUTE: ", match)
+  // console.log("STATE: ", this)
+  localStorage.setItem("article", match.params.query)
+  return (
+    // localStorage.setItem("article", match),
+    // "X",
+    // console.log("TESTING MATCH dari MAINROUTE: ", match)
+    <div>
+      <h3>{match.params.query}</h3>
+    </div>
+    // this.props.ChangeParam
+  );
+}
+
+// export default MainRoute;
 export default connect(
-  "is_login, email, full_name", actions)
-(withRouter(MainRoute));
+  "listNews", actions)
+(withRouter(Signin));

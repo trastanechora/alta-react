@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 import '../css/bootstrap.min.css';
 import '../css/style.css';
@@ -30,6 +30,9 @@ const Navigation = props => {
           </li>
           <li className="nav-item">
             <Link to="/Entertainment" className="nav-link">Hiburan</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/sport" className="nav-link">Sport</Link>
           </li>
           <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
